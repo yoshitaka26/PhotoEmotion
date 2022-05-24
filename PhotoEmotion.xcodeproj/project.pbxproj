@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03954BEF57FE556CC701853A /* Pods_PhotoEmotion_PhotoEmotionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */; };
+		24A60924D70245CF61E424DF /* Pods_PhotoEmotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0558188B69C1DCE6BB358670 /* Pods_PhotoEmotion.framework */; };
+		25CE5195AC52A82258F6974F /* Pods_PhotoEmotionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D7844D7C43790C2780BA69 /* Pods_PhotoEmotionTests.framework */; };
 		E4F9D38F283CC66E00759465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D38E283CC66E00759465 /* AppDelegate.swift */; };
 		E4F9D391283CC66E00759465 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D390283CC66E00759465 /* SceneDelegate.swift */; };
 		E4F9D393283CC66E00759465 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D392283CC66E00759465 /* ViewController.swift */; };
@@ -36,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0558188B69C1DCE6BB358670 /* Pods_PhotoEmotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoEmotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B3EA45D7CD8C075291BF9BA /* Pods-PhotoEmotion-PhotoEmotionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion-PhotoEmotionUITests.release.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		38D7844D7C43790C2780BA69 /* Pods_PhotoEmotionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoEmotionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6107EABCA367877F271545 /* Pods-PhotoEmotionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotionTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEmotionTests/Pods-PhotoEmotionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		490DBA5C5FD6854DDADE8832 /* Pods-PhotoEmotionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotionTests.release.xcconfig"; path = "Target Support Files/Pods-PhotoEmotionTests/Pods-PhotoEmotionTests.release.xcconfig"; sourceTree = "<group>"; };
+		890417B34C86A8B7CD125F7B /* Pods-PhotoEmotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion.release.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion/Pods-PhotoEmotion.release.xcconfig"; sourceTree = "<group>"; };
+		8C5E05517C3ED4B43A9D1B68 /* Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A86985DF495612B13109C0AD /* Pods-PhotoEmotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion/Pods-PhotoEmotion.debug.xcconfig"; sourceTree = "<group>"; };
+		C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoEmotion_PhotoEmotionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F9D38B283CC66E00759465 /* PhotoEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F9D38E283CC66E00759465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F9D390283CC66E00759465 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A60924D70245CF61E424DF /* Pods_PhotoEmotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CE5195AC52A82258F6974F /* Pods_PhotoEmotionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03954BEF57FE556CC701853A /* Pods_PhotoEmotion_PhotoEmotionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3F7389F487CBF64D5CF66DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0558188B69C1DCE6BB358670 /* Pods_PhotoEmotion.framework */,
+				C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */,
+				38D7844D7C43790C2780BA69 /* Pods_PhotoEmotionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E4F9D382283CC66E00759465 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				E4F9D3A4283CC66F00759465 /* PhotoEmotionTests */,
 				E4F9D3AE283CC66F00759465 /* PhotoEmotionUITests */,
 				E4F9D38C283CC66E00759465 /* Products */,
+				E9A55BB777128E72C6596567 /* Pods */,
+				E3F7389F487CBF64D5CF66DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +154,19 @@
 			path = PhotoEmotionUITests;
 			sourceTree = "<group>";
 		};
+		E9A55BB777128E72C6596567 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A86985DF495612B13109C0AD /* Pods-PhotoEmotion.debug.xcconfig */,
+				890417B34C86A8B7CD125F7B /* Pods-PhotoEmotion.release.xcconfig */,
+				8C5E05517C3ED4B43A9D1B68 /* Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig */,
+				0B3EA45D7CD8C075291BF9BA /* Pods-PhotoEmotion-PhotoEmotionUITests.release.xcconfig */,
+				3F6107EABCA367877F271545 /* Pods-PhotoEmotionTests.debug.xcconfig */,
+				490DBA5C5FD6854DDADE8832 /* Pods-PhotoEmotionTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +174,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4F9D3B5283CC66F00759465 /* Build configuration list for PBXNativeTarget "PhotoEmotion" */;
 			buildPhases = (
+				830BEEA19A726059C92AE882 /* [CP] Check Pods Manifest.lock */,
+				E4F9D3BE283CC85F00759465 /* Run Script - R.swift */,
+				E4F9D3BF283CC89C00759465 /* Run Script - SwiftLint */,
 				E4F9D387283CC66E00759465 /* Sources */,
 				E4F9D388283CC66E00759465 /* Frameworks */,
 				E4F9D389283CC66E00759465 /* Resources */,
+				74699F928026F91ECAC6135E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4F9D3B8283CC66F00759465 /* Build configuration list for PBXNativeTarget "PhotoEmotionTests" */;
 			buildPhases = (
+				AC37D44E8241DFB9A76395B1 /* [CP] Check Pods Manifest.lock */,
 				E4F9D39D283CC66F00759465 /* Sources */,
 				E4F9D39E283CC66F00759465 /* Frameworks */,
 				E4F9D39F283CC66F00759465 /* Resources */,
+				CD6E719B3913A859C6CD1257 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4F9D3BB283CC66F00759465 /* Build configuration list for PBXNativeTarget "PhotoEmotionUITests" */;
 			buildPhases = (
+				2D9791428E444A11954F08A3 /* [CP] Check Pods Manifest.lock */,
 				E4F9D3A7283CC66F00759465 /* Sources */,
 				E4F9D3A8283CC66F00759465 /* Frameworks */,
 				E4F9D3A9283CC66F00759465 /* Resources */,
+				AE84581099F8ABDD9BAC7F3E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +300,163 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D9791428E444A11954F08A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoEmotion-PhotoEmotionUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74699F928026F91ECAC6135E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion/Pods-PhotoEmotion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion/Pods-PhotoEmotion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion/Pods-PhotoEmotion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		830BEEA19A726059C92AE882 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoEmotion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC37D44E8241DFB9A76395B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoEmotionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE84581099F8ABDD9BAC7F3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD6E719B3913A859C6CD1257 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotionTests/Pods-PhotoEmotionTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotionTests/Pods-PhotoEmotionTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotionTests/Pods-PhotoEmotionTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4F9D3BE283CC85F00759465 /* Run Script - R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - R.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		E4F9D3BF283CC89C00759465 /* Run Script - SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4F9D387283CC66E00759465 /* Sources */ = {
@@ -432,6 +637,7 @@
 		};
 		E4F9D3B6283CC66F00759465 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A86985DF495612B13109C0AD /* Pods-PhotoEmotion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +666,7 @@
 		};
 		E4F9D3B7283CC66F00759465 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 890417B34C86A8B7CD125F7B /* Pods-PhotoEmotion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +695,7 @@
 		};
 		E4F9D3B9283CC66F00759465 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F6107EABCA367877F271545 /* Pods-PhotoEmotionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +716,7 @@
 		};
 		E4F9D3BA283CC66F00759465 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 490DBA5C5FD6854DDADE8832 /* Pods-PhotoEmotionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +737,7 @@
 		};
 		E4F9D3BC283CC66F00759465 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C5E05517C3ED4B43A9D1B68 /* Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +756,7 @@
 		};
 		E4F9D3BD283CC66F00759465 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B3EA45D7CD8C075291BF9BA /* Pods-PhotoEmotion-PhotoEmotionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
