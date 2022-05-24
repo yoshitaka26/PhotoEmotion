@@ -1,0 +1,9 @@
+# User settings
+.DS_Store
+xcuserdata/
+
+# R.swift
+*.generated.swift
+
+# CocoaPods
+Pods/
