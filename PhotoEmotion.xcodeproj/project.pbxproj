@@ -13,7 +13,7 @@
 		E4F9D38F283CC66E00759465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D38E283CC66E00759465 /* AppDelegate.swift */; };
 		E4F9D391283CC66E00759465 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D390283CC66E00759465 /* SceneDelegate.swift */; };
 		E4F9D393283CC66E00759465 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D392283CC66E00759465 /* MainViewController.swift */; };
-		E4F9D396283CC66E00759465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D394283CC66E00759465 /* Main.storyboard */; };
+		E4F9D396283CC66E00759465 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D394283CC66E00759465 /* MainViewController.storyboard */; };
 		E4F9D398283CC66F00759465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D397283CC66F00759465 /* Assets.xcassets */; };
 		E4F9D39B283CC66F00759465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D399283CC66F00759465 /* LaunchScreen.storyboard */; };
 		E4F9D3A6283CC66F00759465 /* PhotoEmotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3A5283CC66F00759465 /* PhotoEmotionTests.swift */; };
@@ -38,6 +38,10 @@
 		E4F9D3F0283F2C0E00759465 /* UIAleartController+Additon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3EF283F2C0E00759465 /* UIAleartController+Additon.swift */; };
 		E4F9D3F2283F2C5F00759465 /* UINavigationController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3F1283F2C5F00759465 /* UINavigationController+Router.swift */; };
 		E4F9D3F4283F41CB00759465 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3F3283F41CB00759465 /* ListViewModel.swift */; };
+		E4F9D3F6284087AC00759465 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3F5284087AC00759465 /* UploadViewController.swift */; };
+		E4F9D3F8284087C200759465 /* UploadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D3F7284087C200759465 /* UploadViewController.storyboard */; };
+		E4F9D3FA2840992200759465 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3F92840992200759465 /* UploadViewModel.swift */; };
+		E4F9D3FF284209C700759465 /* UIImage+Additon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3FE284209C700759465 /* UIImage+Additon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +75,7 @@
 		E4F9D38E283CC66E00759465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F9D390283CC66E00759465 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E4F9D392283CC66E00759465 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E4F9D395283CC66E00759465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4F9D395283CC66E00759465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
 		E4F9D397283CC66F00759465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4F9D39A283CC66F00759465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4F9D39C283CC66F00759465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +103,10 @@
 		E4F9D3EF283F2C0E00759465 /* UIAleartController+Additon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAleartController+Additon.swift"; sourceTree = "<group>"; };
 		E4F9D3F1283F2C5F00759465 /* UINavigationController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Router.swift"; sourceTree = "<group>"; };
 		E4F9D3F3283F41CB00759465 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		E4F9D3F5284087AC00759465 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		E4F9D3F7284087C200759465 /* UploadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UploadViewController.storyboard; sourceTree = "<group>"; };
+		E4F9D3F92840992200759465 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
+		E4F9D3FE284209C700759465 /* UIImage+Additon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Additon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +212,8 @@
 				E4F9D3DB283E7EE100759465 /* MainViewModel.swift */,
 				E4F9D3DD283E7FE900759465 /* ListViewController.swift */,
 				E4F9D3F3283F41CB00759465 /* ListViewModel.swift */,
+				E4F9D3F5284087AC00759465 /* UploadViewController.swift */,
+				E4F9D3F92840992200759465 /* UploadViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,8 +252,9 @@
 			isa = PBXGroup;
 			children = (
 				E4F9D399283CC66F00759465 /* LaunchScreen.storyboard */,
-				E4F9D394283CC66E00759465 /* Main.storyboard */,
+				E4F9D394283CC66E00759465 /* MainViewController.storyboard */,
 				E4F9D3DF283E805100759465 /* ListViewController.storyboard */,
+				E4F9D3F7284087C200759465 /* UploadViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -265,6 +276,7 @@
 				E4F9D3ED283F29CB00759465 /* UIViewController+Router.swift */,
 				E4F9D3EF283F2C0E00759465 /* UIAleartController+Additon.swift */,
 				E4F9D3F1283F2C5F00759465 /* UINavigationController+Router.swift */,
+				E4F9D3FE284209C700759465 /* UIImage+Additon.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -442,10 +454,11 @@
 			files = (
 				E4F9D39B283CC66F00759465 /* LaunchScreen.storyboard in Resources */,
 				E4F9D3D0283DB3D600759465 /* EmotionTitleHeaderTableViewCell.xib in Resources */,
+				E4F9D3F8284087C200759465 /* UploadViewController.storyboard in Resources */,
 				E4F9D398283CC66F00759465 /* Assets.xcassets in Resources */,
 				E4F9D3D8283E6E2D00759465 /* PhotoCollectionViewCell.xib in Resources */,
 				E4F9D3E0283E805100759465 /* ListViewController.storyboard in Resources */,
-				E4F9D396283CC66E00759465 /* Main.storyboard in Resources */,
+				E4F9D396283CC66E00759465 /* MainViewController.storyboard in Resources */,
 				E4F9D3D4283DB41600759465 /* EmotionContentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,12 +647,15 @@
 				E4F9D3CF283DB3D600759465 /* EmotionTitleHeaderTableViewCell.swift in Sources */,
 				E4F9D38F283CC66E00759465 /* AppDelegate.swift in Sources */,
 				E4F9D3E4283E8AEC00759465 /* Screen.swift in Sources */,
+				E4F9D3FF284209C700759465 /* UIImage+Additon.swift in Sources */,
 				E4F9D3EC283F1D8D00759465 /* UIViewController+Rx.swift in Sources */,
 				E4F9D3F2283F2C5F00759465 /* UINavigationController+Router.swift in Sources */,
 				E4F9D391283CC66E00759465 /* SceneDelegate.swift in Sources */,
 				E4F9D3F0283F2C0E00759465 /* UIAleartController+Additon.swift in Sources */,
+				E4F9D3F6284087AC00759465 /* UploadViewController.swift in Sources */,
 				E4F9D3E2283E89BE00759465 /* EmotionType.swift in Sources */,
 				E4F9D3DE283E7FE900759465 /* ListViewController.swift in Sources */,
+				E4F9D3FA2840992200759465 /* UploadViewModel.swift in Sources */,
 				E4F9D3D3283DB41600759465 /* EmotionContentTableViewCell.swift in Sources */,
 				E4F9D3D7283E6E2D00759465 /* PhotoCollectionViewCell.swift in Sources */,
 				E4F9D3F4283F41CB00759465 /* ListViewModel.swift in Sources */,
@@ -682,12 +698,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E4F9D394283CC66E00759465 /* Main.storyboard */ = {
+		E4F9D394283CC66E00759465 /* MainViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E4F9D395283CC66E00759465 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		E4F9D399283CC66F00759465 /* LaunchScreen.storyboard */ = {
@@ -751,7 +767,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -805,7 +821,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

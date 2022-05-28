@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 enum Screen {
     case main
     case list(emotionType: EmotionType)
     case photo
+    case cropImage(image: UIImage)
     case upload
     case setting
     case errorAlert(message: String)

@@ -49,7 +49,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         bind()
     }
-    
+
     private func bind() {
         rx.viewWillAppear
             .bind(to: viewModel.viewWillAppear)

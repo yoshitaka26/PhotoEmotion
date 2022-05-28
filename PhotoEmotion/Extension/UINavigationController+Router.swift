@@ -17,8 +17,8 @@ extension UINavigationController {
             // TODO: 設定画面へ
             break
         case .upload:
-            // TODO: 設定画面へ
-            break
+            let viewController = UploadViewController.make()
+            pushViewController(viewController, animated: true)
         default:
             break
         }

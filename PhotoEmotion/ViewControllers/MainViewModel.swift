@@ -33,9 +33,9 @@ final class MainViewModel {
 
     private func subscribe() {
         viewWillAppear.subscribe(onNext: { [unowned self] _ in
-            self.fetchData()
-                .subscribe()
-                .disposed(by: disposeBag)
+//            self.fetchData()
+//                .subscribe()
+//                .disposed(by: disposeBag)
         })
         .disposed(by: disposeBag)
     }
