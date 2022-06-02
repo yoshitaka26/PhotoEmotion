@@ -13,9 +13,9 @@ class ListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             let layout = UICollectionViewFlowLayout()
-            layout.minimumInteritemSpacing = 5
-            layout.minimumLineSpacing = 5
-            layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            layout.minimumInteritemSpacing = 2
+            layout.minimumLineSpacing = 2
+            layout.sectionInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
             collectionView.collectionViewLayout = layout
 
             collectionView.register(R.nib.photoCollectionViewCell)
@@ -49,6 +49,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        navigationItem.title = listType?.titleText
     }
 
     private func bind() {
@@ -72,7 +73,7 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 3
+        let width = (collectionView.frame.width - 10.0) / 3
         return CGSize(width: width, height: width)
     }
 }

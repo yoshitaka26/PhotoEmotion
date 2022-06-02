@@ -44,11 +44,22 @@ final class ListViewModel {
         })
         .disposed(by: disposeBag)
     }
-
+    
     private func fetchData() -> Completable {
-        return Completable.create { completable in
-            // TODO: データ取得処理を追加
-            completable(.completed) as! Disposable
-        }
+        return PhotoFirebaseRepository.fetch(emotionType: listType)
+            .do(
+                onSuccess: { [weak self] photoItems in
+                    guard let self = self else { return }
+                    self.photoListSubject.accept(photoItems)
+                },
+                onError: { [weak self] error in
+                    guard let self = self else { return }
+                    self.presentScreenSubject
+                        .accept(.errorAlert(message: R.string.localizable.error_data_fetch_failed()))
+                    print(error.localizedDescription)
+                }
+            )
+            .map { _ in }
+            .asCompletable()
     }
 }
