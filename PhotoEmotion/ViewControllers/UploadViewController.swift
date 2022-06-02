@@ -115,7 +115,7 @@ class UploadViewController: UIViewController {
                     self.sadButton.backgroundColor = .systemBlue
                 case .angry:
                     self.angryButton.backgroundColor = .systemRed
-                case .scarred:
+                case .scared:
                     self.scarredButton.backgroundColor = .systemPurple
                 case .other:
                     return
@@ -149,7 +149,7 @@ class UploadViewController: UIViewController {
 
         scarredButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
-                self.viewModel.handleEmotionButton(emotionType: .scarred)
+                self.viewModel.handleEmotionButton(emotionType: .scared)
             })
             .disposed(by: disposeBag)
 

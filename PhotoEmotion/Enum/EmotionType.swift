@@ -11,7 +11,7 @@ enum EmotionType: String, CaseIterable {
     case happy
     case sad
     case angry
-    case scarred
+    case scared
     case other
 
     var typeNumber: Int {
@@ -22,10 +22,14 @@ enum EmotionType: String, CaseIterable {
             return 200
         case .angry:
             return 300
-        case .scarred:
+        case .scared:
             return 400
         case .other:
             return 999
         }
+    }
+
+    var titleText: String {
+        self.rawValue.prefix(1).uppercased() + self.rawValue.dropFirst()
     }
 }
