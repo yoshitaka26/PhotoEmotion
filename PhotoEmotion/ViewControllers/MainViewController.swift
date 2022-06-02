@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 protocol ListTableDelegate: AnyObject {
     func headerButtonPressed(_ emotionType: EmotionType)
@@ -30,8 +31,23 @@ final class MainViewController: UIViewController {
             tableView.rx
                 .setDataSource(self)
                 .disposed(by: disposeBag)
+
+            viewModel.emotionListSubject
+                .subscribe(onNext: { [weak self] _ in
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
+                })
+                .disposed(by: disposeBag)
         }
     }
+
+    private var isLoading: Bool = false {
+        didSet {
+            self.isLoading ? HUD.show(.progress) : HUD.hide()
+        }
+    }
+
     private let disposeBag = DisposeBag()
     private let viewModel = MainViewModel()
 
@@ -43,6 +59,12 @@ final class MainViewController: UIViewController {
     private func bind() {
         rx.viewWillAppear
             .bind(to: viewModel.viewWillAppear)
+            .disposed(by: disposeBag)
+
+        viewModel.isLoading
+            .subscribe(onNext: { [weak self] in
+                self?.isLoading = $0
+            })
             .disposed(by: disposeBag)
 
         viewModel.presentScreen

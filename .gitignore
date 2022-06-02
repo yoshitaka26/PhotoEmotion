@@ -7,3 +7,6 @@ xcuserdata/
 
 # CocoaPods
 Pods/
+
+# Firebase
+GoogleService-Info.plist

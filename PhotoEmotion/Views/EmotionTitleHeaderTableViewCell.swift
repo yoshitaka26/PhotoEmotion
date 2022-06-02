@@ -15,7 +15,7 @@ class EmotionTitleHeaderTableViewCell: UITableViewHeaderFooterView {
         didSet {
             emotionType
                 .subscribe(onNext: { [unowned self] emotionType in
-                    self.emotionLabel.text = emotionType.rawValue
+                    self.emotionLabel.text = emotionType.rawValue.prefix(1).uppercased() + emotionType.rawValue.dropFirst()
                 })
                 .disposed(by: disposeBag)
         }

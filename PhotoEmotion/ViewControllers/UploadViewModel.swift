@@ -8,10 +8,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FirebaseStorage
+import FirebaseFirestore
 
 final class UploadViewModel {
 
     private(set) var isLoading = BehaviorRelay<Bool>(value: false)
+    private(set) var uploadResult = PublishRelay<Result<String, APIError>>()
     private(set) var viewWillAppear = PublishRelay<Void>()
 
     private var imageSubject = BehaviorRelay<UIImage>(value: R.image.add_photo()!)
@@ -56,6 +59,13 @@ final class UploadViewModel {
         .disposed(by: disposeBag)
     }
 
+    func resetImage() {
+        imageSubject.accept(R.image.add_photo()!)
+        photoEmotionSubject.accept(.happy)
+        cropImageButtonEnabledSubject.accept(false)
+        uploadImageButtonEnabledSubject.accept(false)
+    }
+
     func handleImagePicker(selectedImage: UIImage) {
         self.imageSubject.accept(selectedImage)
         self.cropImageButtonEnabledSubject.accept(true)
@@ -75,6 +85,19 @@ final class UploadViewModel {
     }
 
     func handleUploadButton() {
-        // TODO: アップロード処理
+        isLoading.accept(true)
+
+        PhotoFirebaseRepository.upload(image: imageSubject.value, emotionType: photoEmotionSubject.value, imageId: UUID())
+            .subscribe(
+                onCompleted: { [weak self] in
+                    self?.isLoading.accept(false)
+                    self?.uploadResult.accept(.success(R.string.localizable.image_uploaded()))
+                },
+                onError: { [weak self] error in
+                    self?.isLoading.accept(false)
+                    self?.uploadResult.accept(.failure(.imageUploadError))
+                    print(error.localizedDescription)
+                })
+            .disposed(by: disposeBag)
     }
 }

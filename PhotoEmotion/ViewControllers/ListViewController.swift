@@ -25,11 +25,12 @@ class ListViewController: UIViewController {
                 .disposed(by: disposeBag)
 
             viewModel.photoList
-                .drive(collectionView.rx.items) { [weak self] collectionView, row, element in
+                .drive(collectionView.rx.items) { collectionView, row, element in
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.photoCollectionViewCell, for: IndexPath(row: row, section: 0)) as! PhotoCollectionViewCell
                     cell.render(photoItem: element)
                     return cell
                 }
+                .disposed(by: disposeBag)
         }
     }
     private let disposeBag = DisposeBag()

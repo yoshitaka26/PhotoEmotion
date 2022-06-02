@@ -10,6 +10,7 @@ import PhotosUI
 import RxSwift
 import RxCocoa
 import CropViewController
+import PKHUD
 
 class UploadViewController: UIViewController {
 
@@ -31,6 +32,12 @@ class UploadViewController: UIViewController {
     @IBOutlet private weak var uploadButton: UIButton!
     @IBOutlet private weak var corpImageBarButtonItem: UIBarButtonItem!
 
+    private var isLoading: Bool = false {
+        didSet {
+            self.isLoading ? HUD.show(.progress) : HUD.hide()
+        }
+    }
+
     private let disposeBag = DisposeBag()
     private var viewModel: UploadViewModel!
 
@@ -50,6 +57,27 @@ class UploadViewController: UIViewController {
     private func bind() {
         rx.viewWillAppear
             .bind(to: viewModel.viewWillAppear)
+            .disposed(by: disposeBag)
+
+        viewModel.isLoading
+            .subscribe(onNext: { [weak self] in
+                self?.isLoading = $0
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.uploadResult
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .success(let message):
+                    HUD.show(.labeledSuccess(title: message, subtitle: nil))
+                    HUD.hide(afterDelay: 1.5) { _ in
+                        self?.viewModel.resetImage()
+                    }
+                case .failure(let error):
+                    HUD.show(.labeledError(title: error.message, subtitle: nil))
+                    HUD.hide(afterDelay: 2.0)
+                }
+            })
             .disposed(by: disposeBag)
 
         viewModel.presentScreen
@@ -130,7 +158,7 @@ class UploadViewController: UIViewController {
                 self.corpImageBarButtonItem.isEnabled = enabled
             })
             .disposed(by: disposeBag)
-        
+
         corpImageBarButtonItem.rx.tap
             .subscribe(onNext: { [unowned self] _ in
                 self.viewModel.handleCropImageBarButtonItem()
@@ -142,14 +170,14 @@ class UploadViewController: UIViewController {
                 self.uploadButton.isEnabled = enabled
             })
             .disposed(by: disposeBag)
-        
+
         uploadButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
                 self.viewModel.handleUploadButton()
             })
             .disposed(by: disposeBag)
     }
-    
+
     private func clearEmotionButtons() {
         happyButton.backgroundColor = .clear
         sadButton.backgroundColor = .clear

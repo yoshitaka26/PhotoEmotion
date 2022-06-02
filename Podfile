@@ -6,6 +6,12 @@ target 'PhotoEmotion' do
   use_frameworks!
 
   # Pods for PhotoEmotion
+  pod 'FirebaseAnalytics', '~> 9.0'
+  pod 'FirebaseAuth', '~> 9.0'
+  pod 'FirebaseFirestore', '~> 9.0'
+  pod 'FirebaseStorage', '~> 9.0'
+  pod 'FirebaseCrashlytics', '~> 9.0'
+
   pod 'RxSwift', '~> 6.5.0'
   pod 'RxOptional', '~> 5.0'
   pod 'R.swift', '~> 6.1.0'

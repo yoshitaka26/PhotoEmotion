@@ -7,11 +7,14 @@
 
 import RxSwift
 import RxCocoa
+import FirebaseFirestore
 
 final class MainViewModel {
 
     private(set) var isLoading = BehaviorRelay<Bool>(value: false)
     private(set) var viewWillAppear = PublishRelay<Void>()
+
+    private var apiAccessCount = BehaviorRelay<Int>(value: 0)
 
     var emotionListSubject = BehaviorRelay<[EmotionListContents]>(value: [])
 
@@ -32,19 +35,54 @@ final class MainViewModel {
     }
 
     private func subscribe() {
-        viewWillAppear.subscribe(onNext: { [unowned self] _ in
-//            self.fetchData()
-//                .subscribe()
-//                .disposed(by: disposeBag)
+        viewWillAppear
+            .subscribe(onNext: { [unowned self] _ in
+            EmotionType.allCases.forEach { emotionType in
+                self.fetchData(emotionType: emotionType)
+                    .subscribe()
+                    .disposed(by: disposeBag)
+            }
+        })
+        .disposed(by: disposeBag)
+
+        apiAccessCount
+            .subscribe(onNext: { [unowned self] count in
+                self.isLoading.accept(count != 0)
         })
         .disposed(by: disposeBag)
     }
 
-    private func fetchData() -> Completable {
-        return Completable.create { completable in
-            // TODO: データ取得処理を追加
-            completable(.completed) as! Disposable
-        }
+    private func fetchData(emotionType: EmotionType) -> Completable {
+        apiAccessCount.accept(apiAccessCount.value + 1)
+        return PhotoFirebaseRepository.fetch(emotionType: emotionType)
+            .do(
+                onSuccess: { [weak self] photoItems in
+                    guard let self = self else { return }
+                    self.apiAccessCount.accept(self.apiAccessCount.value - 1)
+                    var contents = self.emotionListSubject.value
+                    if !contents.contains(where: { $0.type == emotionType }) {
+                        contents.append(EmotionListContents.init(type: emotionType, contents: photoItems))
+                    } else {
+                        contents = contents.map { emotionList in
+                            if emotionList.type == emotionType {
+                                return EmotionListContents.init(type: emotionList.type, contents: photoItems)
+                            } else {
+                                return emotionList
+                            }
+                        }
+                    }
+                    self.emotionListSubject.accept(contents.sorted(by: <))
+                },
+                onError: { [weak self] error in
+                    guard let self = self else { return }
+                    self.apiAccessCount.accept(self.apiAccessCount.value - 1)
+                    self.presentScreenSubject
+                        .accept(.errorAlert(message: R.string.localizable.error_data_fetch_failed()))
+                    print(error.localizedDescription)
+                }
+            )
+            .map { _ in }
+            .asCompletable()
     }
 }
 

@@ -10,6 +10,10 @@
 		03954BEF57FE556CC701853A /* Pods_PhotoEmotion_PhotoEmotionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */; };
 		24A60924D70245CF61E424DF /* Pods_PhotoEmotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0558188B69C1DCE6BB358670 /* Pods_PhotoEmotion.framework */; };
 		25CE5195AC52A82258F6974F /* Pods_PhotoEmotionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D7844D7C43790C2780BA69 /* Pods_PhotoEmotionTests.framework */; };
+		E4B38DC528427363002F8E6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B38DC428427363002F8E6A /* GoogleService-Info.plist */; };
+		E4B38DC828447ECC002F8E6A /* PhotoFirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B38DC728447ECC002F8E6A /* PhotoFirebaseRepository.swift */; };
+		E4B38DCA28480F56002F8E6A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B38DC928480F56002F8E6A /* APIError.swift */; };
+		E4B38DCD284810AF002F8E6A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4B38DCF284810AF002F8E6A /* Localizable.strings */; };
 		E4F9D38F283CC66E00759465 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D38E283CC66E00759465 /* AppDelegate.swift */; };
 		E4F9D391283CC66E00759465 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D390283CC66E00759465 /* SceneDelegate.swift */; };
 		E4F9D393283CC66E00759465 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D392283CC66E00759465 /* MainViewController.swift */; };
@@ -71,6 +75,11 @@
 		8C5E05517C3ED4B43A9D1B68 /* Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A86985DF495612B13109C0AD /* Pods-PhotoEmotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion/Pods-PhotoEmotion.debug.xcconfig"; sourceTree = "<group>"; };
 		C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoEmotion_PhotoEmotionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B38DC428427363002F8E6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4B38DC728447ECC002F8E6A /* PhotoFirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFirebaseRepository.swift; sourceTree = "<group>"; };
+		E4B38DC928480F56002F8E6A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		E4B38DCE284810AF002F8E6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E4B38DD0284812BE002F8E6A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4F9D38B283CC66E00759465 /* PhotoEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F9D38E283CC66E00759465 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F9D390283CC66E00759465 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +156,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E4B38DC628447E8C002F8E6A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E4B38DC728447ECC002F8E6A /* PhotoFirebaseRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		E4F9D382283CC66E00759465 = {
 			isa = PBXGroup;
 			children = (
@@ -172,13 +189,15 @@
 		E4F9D38D283CC66E00759465 /* PhotoEmotion */ = {
 			isa = PBXGroup;
 			children = (
+				E4B38DC628447E8C002F8E6A /* Repository */,
 				E4F9D39C283CC66F00759465 /* Info.plist */,
+				E4B38DC428427363002F8E6A /* GoogleService-Info.plist */,
+				E4F9D3C7283CD34300759465 /* AppDelegate */,
 				E4F9D3CC283CD3E800759465 /* Util */,
 				E4F9D3CB283CD3C800759465 /* Protocol */,
 				E4F9D3CA283CD3BF00759465 /* Struct */,
 				E4F9D3C9283CD3B300759465 /* Network */,
 				E4F9D3C8283CD3A900759465 /* Entity */,
-				E4F9D3C7283CD34300759465 /* AppDelegate */,
 				E4F9D3C6283CD30400759465 /* Extension */,
 				E4F9D3C3283CD2C800759465 /* Resource */,
 				E4F9D3C2283CD2B500759465 /* Enum */,
@@ -244,6 +263,7 @@
 				E4F9D397283CC66F00759465 /* Assets.xcassets */,
 				E4F9D3C5283CD2F400759465 /* xib */,
 				E4F9D3C4283CD2DF00759465 /* Storyboard */,
+				E4B38DCF284810AF002F8E6A /* Localizable.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -301,6 +321,7 @@
 		E4F9D3C9283CD3B300759465 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E4B38DC928480F56002F8E6A /* APIError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -434,6 +455,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = E4F9D382283CC66E00759465;
 			productRefGroup = E4F9D38C283CC66E00759465 /* Products */;
@@ -454,8 +476,10 @@
 			files = (
 				E4F9D39B283CC66F00759465 /* LaunchScreen.storyboard in Resources */,
 				E4F9D3D0283DB3D600759465 /* EmotionTitleHeaderTableViewCell.xib in Resources */,
+				E4B38DC528427363002F8E6A /* GoogleService-Info.plist in Resources */,
 				E4F9D3F8284087C200759465 /* UploadViewController.storyboard in Resources */,
 				E4F9D398283CC66F00759465 /* Assets.xcassets in Resources */,
+				E4B38DCD284810AF002F8E6A /* Localizable.strings in Resources */,
 				E4F9D3D8283E6E2D00759465 /* PhotoCollectionViewCell.xib in Resources */,
 				E4F9D3E0283E805100759465 /* ListViewController.storyboard in Resources */,
 				E4F9D396283CC66E00759465 /* MainViewController.storyboard in Resources */,
@@ -648,9 +672,11 @@
 				E4F9D38F283CC66E00759465 /* AppDelegate.swift in Sources */,
 				E4F9D3E4283E8AEC00759465 /* Screen.swift in Sources */,
 				E4F9D3FF284209C700759465 /* UIImage+Additon.swift in Sources */,
+				E4B38DC828447ECC002F8E6A /* PhotoFirebaseRepository.swift in Sources */,
 				E4F9D3EC283F1D8D00759465 /* UIViewController+Rx.swift in Sources */,
 				E4F9D3F2283F2C5F00759465 /* UINavigationController+Router.swift in Sources */,
 				E4F9D391283CC66E00759465 /* SceneDelegate.swift in Sources */,
+				E4B38DCA28480F56002F8E6A /* APIError.swift in Sources */,
 				E4F9D3F0283F2C0E00759465 /* UIAleartController+Additon.swift in Sources */,
 				E4F9D3F6284087AC00759465 /* UploadViewController.swift in Sources */,
 				E4F9D3E2283E89BE00759465 /* EmotionType.swift in Sources */,
@@ -698,6 +724,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E4B38DCF284810AF002F8E6A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4B38DCE284810AF002F8E6A /* en */,
+				E4B38DD0284812BE002F8E6A /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E4F9D394283CC66E00759465 /* MainViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -721,6 +756,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -781,6 +817,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

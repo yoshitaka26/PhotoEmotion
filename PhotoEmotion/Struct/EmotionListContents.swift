@@ -7,7 +7,15 @@
 
 import Foundation
 
-struct EmotionListContents {
+struct EmotionListContents: Equatable {
     let type: EmotionType
     let contents: [PhotoItem]
+
+    static func == (lhs: EmotionListContents, rhs: EmotionListContents) -> Bool {
+        return lhs.type == rhs.type
+    }
+
+    static func < (lhs: EmotionListContents, rhs: EmotionListContents) -> Bool {
+        return lhs.type.typeNumber < rhs.type.typeNumber
+    }
 }

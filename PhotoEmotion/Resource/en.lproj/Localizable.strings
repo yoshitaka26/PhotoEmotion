@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  PhotoEmotion
+
+  Created by Yoshitaka Tanaka on 2022/06/02.
+  
+*/
+
+// MARK: Firebase
+"image_uploaded" = "Image uploaded";
+
+// MARK: Error
+"error_data_fetch_failed" = "Data fetch error";
+"error_image_upload_failed" = "Image upload failed";
