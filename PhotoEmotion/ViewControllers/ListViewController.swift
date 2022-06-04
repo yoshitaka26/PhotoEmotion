@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import ImageViewer
 
 class ListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -30,6 +31,13 @@ class ListViewController: UIViewController {
                     cell.render(photoItem: element)
                     return cell
                 }
+                .disposed(by: disposeBag)
+
+            collectionView.rx.itemSelected
+                .subscribe(onNext: { [unowned self] indexPath in
+                    self.collectionView.deselectItem(at: indexPath, animated: true)
+                    self.viewModel.handleCollectionCellSelected(index: indexPath.row)
+                })
                 .disposed(by: disposeBag)
         }
     }
@@ -59,7 +67,13 @@ class ListViewController: UIViewController {
 
         viewModel.presentScreen
             .drive(onNext: { [unowned self] screen in
-                self.presentScreen(screen)
+                switch screen {
+                case .imageView(let index):
+                    let viewController = GalleryViewController(startIndex: index, itemsDataSource: self, displacedViewsDataSource: self, configuration: [ .deleteButtonMode(.none), .thumbnailsButtonMode(.none)])
+                    self.presentImageGallery(viewController)
+                default:
+                    self.presentScreen(screen)
+                }
             })
             .disposed(by: disposeBag)
 
@@ -77,3 +91,21 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: width)
     }
 }
+
+extension ListViewController: GalleryItemsDataSource {
+    func itemCount() -> Int {
+        return self.viewModel.galleryImages.value.count
+    }
+
+    func provideGalleryItem(_ index: Int) -> GalleryItem {
+        return GalleryItem.image { $0(self.viewModel.galleryImages.value[index]) }
+    }
+}
+
+extension ListViewController: GalleryDisplacedViewsDataSource {
+    func provideDisplacementItem(atIndex index: Int) -> DisplaceableView? {
+        return UIImageView(image: viewModel.galleryImages.value[index])
+    }
+}
+
+extension UIImageView: DisplaceableView {}

@@ -11,9 +11,9 @@ import UIKit
 enum Screen {
     case main
     case list(emotionType: EmotionType)
-    case photo
-    case cropImage(image: UIImage)
+    case imageView(index: Int)
     case upload
+    case cropImage(image: UIImage)
     case setting
     case errorAlert(message: String)
     case other
