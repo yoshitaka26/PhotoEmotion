@@ -30,7 +30,7 @@ class EmotionContentTableViewCell: UITableViewCell {
             collectionView.rx.itemSelected
                 .subscribe(onNext: { [unowned self] indexPath in
                     self.collectionView.deselectItem(at: indexPath, animated: true)
-                    // TODO: 写真拡大表示
+                    self.delegate?.collectionImagePressed(self.photoItemsSubject.value[indexPath.row])
                 })
                 .disposed(by: disposeBag)
         }
@@ -39,6 +39,7 @@ class EmotionContentTableViewCell: UITableViewCell {
     var photoItems: Driver<[PhotoItem]> {
         return photoItemsSubject.asDriver(onErrorJustReturn: [])
     }
+    weak var delegate: ListTableDelegate?
     private let disposeBag = DisposeBag()
     override func awakeFromNib() {
         super.awakeFromNib()

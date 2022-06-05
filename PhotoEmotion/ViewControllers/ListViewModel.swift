@@ -80,6 +80,6 @@ final class ListViewModel {
 
 extension ListViewModel {
     func handleCollectionCellSelected(index: Int) {
-        presentScreenSubject.accept(.imageView(index: index))
+        presentScreenSubject.accept(.galleryView(index: index))
     }
 }

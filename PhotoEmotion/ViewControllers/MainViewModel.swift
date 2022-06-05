@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 import FirebaseFirestore
+import PINRemoteImage
 
 final class MainViewModel {
 
@@ -16,7 +17,8 @@ final class MainViewModel {
 
     private var apiAccessCount = BehaviorRelay<Int>(value: 0)
 
-    var emotionListSubject = BehaviorRelay<[EmotionListContents]>(value: [])
+    private(set) var emotionListSubject = BehaviorRelay<[EmotionListContents]>(value: [])
+    private(set) var galleryImage = BehaviorRelay<UIImage?>(value: nil)
 
     private var pushScreenSubject = PublishRelay<Screen>()
     var pushScreen: Driver<Screen> {
@@ -59,13 +61,14 @@ final class MainViewModel {
                 onSuccess: { [weak self] photoItems in
                     guard let self = self else { return }
                     self.apiAccessCount.accept(self.apiAccessCount.value - 1)
+                    guard !photoItems.isEmpty else { return }
                     var contents = self.emotionListSubject.value
                     if !contents.contains(where: { $0.type == emotionType }) {
-                        contents.append(EmotionListContents.init(type: emotionType, contents: photoItems))
+                        contents.append(EmotionListContents.init(type: emotionType, contents: Array(photoItems.prefix(6))))
                     } else {
                         contents = contents.map { emotionList in
                             if emotionList.type == emotionType {
-                                return EmotionListContents.init(type: emotionList.type, contents: photoItems)
+                                return EmotionListContents.init(type: emotionList.type, contents: Array(photoItems.prefix(6)))
                             } else {
                                 return emotionList
                             }
@@ -97,5 +100,13 @@ extension MainViewModel {
 
     func handleListTableButton(emotionType: EmotionType) {
         pushScreenSubject.accept(.list(emotionType: emotionType))
+    }
+
+    func handleCollectionCellImage(_ photoItem: PhotoItem) {
+        _ = PINRemoteImageManager.shared().downloadImage(with: URL(string: photoItem.photoURL)!) { [weak self] result in
+            guard let self = self, let image = result.image else { return }
+            self.galleryImage.accept(image)
+            self.presentScreenSubject.accept(.galleryView(index: 0))
+        }
     }
 }

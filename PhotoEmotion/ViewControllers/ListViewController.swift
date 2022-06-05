@@ -68,8 +68,8 @@ class ListViewController: UIViewController {
         viewModel.presentScreen
             .drive(onNext: { [unowned self] screen in
                 switch screen {
-                case .imageView(let index):
-                    let viewController = GalleryViewController(startIndex: index, itemsDataSource: self, displacedViewsDataSource: self, configuration: [ .deleteButtonMode(.none), .thumbnailsButtonMode(.none)])
+                case .galleryView(let index):
+                    let viewController = GalleryViewController(startIndex: index, itemsDataSource: self, configuration: [ .deleteButtonMode(.none), .thumbnailsButtonMode(.none)])
                     self.presentImageGallery(viewController)
                 default:
                     self.presentScreen(screen)

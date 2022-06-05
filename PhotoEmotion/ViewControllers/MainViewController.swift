@@ -9,9 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 import PKHUD
+import ImageViewer
 
 protocol ListTableDelegate: AnyObject {
     func headerButtonPressed(_ emotionType: EmotionType)
+    func collectionImagePressed(_ photoItem: PhotoItem)
 }
 
 final class MainViewController: UIViewController {
@@ -69,10 +71,15 @@ final class MainViewController: UIViewController {
 
         viewModel.presentScreen
             .drive(onNext: { [unowned self] screen in
-                self.presentScreen(screen)
+                switch screen {
+                case .galleryView(let index):
+                    let viewController = GalleryViewController(startIndex: index, itemsDataSource: self, configuration: [ .deleteButtonMode(.none), .thumbnailsButtonMode(.none)])
+                    self.presentImageGallery(viewController)
+                default:
+                    self.presentScreen(screen)
+                }
             })
             .disposed(by: disposeBag)
-
         viewModel.pushScreen
             .drive(onNext: { [unowned self] screen in
                 self.navigationController?.pushScreen(screen)
@@ -119,6 +126,7 @@ extension MainViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.emotionContentTableViewCell, for: indexPath) as! EmotionContentTableViewCell
         let emotionListContents = viewModel.emotionListSubject.value[indexPath.section]
         cell.render(emotionListContents: emotionListContents)
+        cell.delegate = self
         return cell
     }
 }
@@ -126,5 +134,19 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: ListTableDelegate {
     func headerButtonPressed(_ emotionType: EmotionType) {
         viewModel.handleListTableButton(emotionType: emotionType)
+    }
+
+    func collectionImagePressed(_ photoItem: PhotoItem) {
+        viewModel.handleCollectionCellImage(photoItem)
+    }
+}
+
+extension MainViewController: GalleryItemsDataSource {
+    func itemCount() -> Int {
+        return viewModel.galleryImage.value != nil ? 1 : 0
+    }
+
+    func provideGalleryItem(_ index: Int) -> GalleryItem {
+        return GalleryItem.image { $0(self.viewModel.galleryImage.value) }
     }
 }
