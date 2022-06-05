@@ -18,3 +18,19 @@ enum Screen {
     case errorAlert(message: String)
     case other
 }
+
+func ==(a: Screen, b: Screen) -> Bool {
+    switch (a, b) {
+    case (.main, .main),
+        (.list, .list),
+        (.galleryView, .galleryView),
+        (.upload, .upload),
+        (.cropImage, .cropImage),
+        (.setting, .setting),
+        (.errorAlert, .errorAlert),
+        (.other, .other):
+        return true
+    default:
+        return false
+    }
+}

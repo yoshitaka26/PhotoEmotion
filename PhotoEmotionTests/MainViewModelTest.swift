@@ -13,8 +13,21 @@ import RxTest
 @testable import PhotoEmotion
 
 class MainViewModelTest: XCTestCase {
-    func testHandleCollectionCell() {
+    func testHandleAddPhotoBarButtonItem() {
         let disposeBag = DisposeBag()
         let scheduler = TestScheduler(initialClock: 0)
+        let photoFirebaseRepository = MockPhotoFirebaseRepository(result: .success)
+        let viewModel = MainViewModel(photoFirebaseRepository: photoFirebaseRepository)
+        scheduler.scheduleAt(100) {
+            viewModel.pushScreen
+                .drive(onNext: {
+                    XCTAssertTrue($0 == .upload)
+                })
+                .disposed(by: disposeBag)
+        }
+        scheduler.scheduleAt(200) {
+            viewModel.handleAddPhotoBarButtonItem()
+        }
+        scheduler.start()
     }
 }
