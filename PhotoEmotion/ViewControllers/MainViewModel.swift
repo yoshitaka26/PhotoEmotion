@@ -10,6 +10,19 @@ import RxCocoa
 import FirebaseFirestore
 import PINRemoteImage
 
+protocol MainViewModelable {
+    var isLoading: BehaviorRelay<Bool> { get }
+    var viewWillAppear: PublishRelay<Void> { get }
+    var emotionListSubject: BehaviorRelay<[EmotionListContents]> { get }
+    var galleryImage: BehaviorRelay<UIImage?> { get }
+    var pushScreen: Driver<Screen> { get }
+    var presentScreen: Driver<Screen> { get }
+    func handleSettingBarButtonItem()
+    func handleAddPhotoBarButtonItem()
+    func handleListTableButton(emotionType: EmotionType)
+    func handleCollectionCellImage(_ photoItem: PhotoItem)
+}
+
 final class MainViewModel {
 
     private(set) var isLoading = BehaviorRelay<Bool>(value: false)
@@ -31,8 +44,14 @@ final class MainViewModel {
     }
 
     private let disposeBag = DisposeBag()
+    private let photoFirebaseRepository: PhotoFirebaseRepositoryable
 
-    init() {
+    convenience init() {
+        self.init(photoFirebaseRepository: PhotoFirebaseRepository.shared)
+    }
+
+    init(photoFirebaseRepository: PhotoFirebaseRepositoryable) {
+        self.photoFirebaseRepository = photoFirebaseRepository
         subscribe()
     }
 
@@ -56,7 +75,7 @@ final class MainViewModel {
 
     private func fetchData(emotionType: EmotionType) -> Completable {
         apiAccessCount.accept(apiAccessCount.value + 1)
-        return PhotoFirebaseRepository.fetch(emotionType: emotionType)
+        return photoFirebaseRepository.fetch(emotionType: emotionType)
             .do(
                 onSuccess: { [weak self] photoItems in
                     guard let self = self else { return }
@@ -89,7 +108,7 @@ final class MainViewModel {
     }
 }
 
-extension MainViewModel {
+extension MainViewModel: MainViewModelable {
     func handleSettingBarButtonItem() {
         pushScreenSubject.accept(.setting)
     }

@@ -48,8 +48,14 @@ final class UploadViewModel {
     }
 
     private let disposeBag = DisposeBag()
+    private let photoFirebaseRepository: PhotoFirebaseRepositoryable
 
-    init() {
+    convenience init() {
+        self.init(photoFirebaseRepository: PhotoFirebaseRepository.shared)
+    }
+
+    init(photoFirebaseRepository: PhotoFirebaseRepositoryable) {
+        self.photoFirebaseRepository = photoFirebaseRepository
         subscribe()
     }
 
@@ -87,7 +93,7 @@ final class UploadViewModel {
     func handleUploadButton() {
         isLoading.accept(true)
 
-        PhotoFirebaseRepository.upload(image: imageSubject.value, emotionType: photoEmotionSubject.value, imageId: UUID())
+        photoFirebaseRepository.upload(image: imageSubject.value, emotionType: photoEmotionSubject.value, imageId: UUID())
             .subscribe(
                 onCompleted: { [weak self] in
                     self?.isLoading.accept(false)

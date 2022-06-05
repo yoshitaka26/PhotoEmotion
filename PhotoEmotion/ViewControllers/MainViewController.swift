@@ -51,7 +51,7 @@ final class MainViewController: UIViewController {
     }
 
     private let disposeBag = DisposeBag()
-    private let viewModel = MainViewModel()
+    private let viewModel: MainViewModelable = MainViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

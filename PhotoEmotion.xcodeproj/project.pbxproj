@@ -10,6 +10,10 @@
 		03954BEF57FE556CC701853A /* Pods_PhotoEmotion_PhotoEmotionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */; };
 		24A60924D70245CF61E424DF /* Pods_PhotoEmotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0558188B69C1DCE6BB358670 /* Pods_PhotoEmotion.framework */; };
 		25CE5195AC52A82258F6974F /* Pods_PhotoEmotionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D7844D7C43790C2780BA69 /* Pods_PhotoEmotionTests.framework */; };
+		E42F2150284CA97D0029970D /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F214F284CA97D0029970D /* MainViewModelTest.swift */; };
+		E42F2152284CAF280029970D /* PhotoFirebaseRepositoryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F2151284CAF280029970D /* PhotoFirebaseRepositoryable.swift */; };
+		E42F2154284CB0560029970D /* MockPhotoFirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F2153284CB0560029970D /* MockPhotoFirebaseRepository.swift */; };
+		E42F2156284CB3570029970D /* TestResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F2155284CB3570029970D /* TestResultType.swift */; };
 		E4B38DC528427363002F8E6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B38DC428427363002F8E6A /* GoogleService-Info.plist */; };
 		E4B38DC828447ECC002F8E6A /* PhotoFirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B38DC728447ECC002F8E6A /* PhotoFirebaseRepository.swift */; };
 		E4B38DCA28480F56002F8E6A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B38DC928480F56002F8E6A /* APIError.swift */; };
@@ -75,6 +79,10 @@
 		8C5E05517C3ED4B43A9D1B68 /* Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A86985DF495612B13109C0AD /* Pods-PhotoEmotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoEmotion.debug.xcconfig"; path = "Target Support Files/Pods-PhotoEmotion/Pods-PhotoEmotion.debug.xcconfig"; sourceTree = "<group>"; };
 		C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoEmotion_PhotoEmotionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E42F214F284CA97D0029970D /* MainViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTest.swift; sourceTree = "<group>"; };
+		E42F2151284CAF280029970D /* PhotoFirebaseRepositoryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFirebaseRepositoryable.swift; sourceTree = "<group>"; };
+		E42F2153284CB0560029970D /* MockPhotoFirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoFirebaseRepository.swift; sourceTree = "<group>"; };
+		E42F2155284CB3570029970D /* TestResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultType.swift; sourceTree = "<group>"; };
 		E4B38DC428427363002F8E6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4B38DC728447ECC002F8E6A /* PhotoFirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFirebaseRepository.swift; sourceTree = "<group>"; };
 		E4B38DC928480F56002F8E6A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -189,11 +197,11 @@
 		E4F9D38D283CC66E00759465 /* PhotoEmotion */ = {
 			isa = PBXGroup;
 			children = (
-				E4B38DC628447E8C002F8E6A /* Repository */,
 				E4F9D39C283CC66F00759465 /* Info.plist */,
 				E4B38DC428427363002F8E6A /* GoogleService-Info.plist */,
 				E4F9D3C7283CD34300759465 /* AppDelegate */,
 				E4F9D3CC283CD3E800759465 /* Util */,
+				E4B38DC628447E8C002F8E6A /* Repository */,
 				E4F9D3CB283CD3C800759465 /* Protocol */,
 				E4F9D3CA283CD3BF00759465 /* Struct */,
 				E4F9D3C9283CD3B300759465 /* Network */,
@@ -211,6 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				E4F9D3A5283CC66F00759465 /* PhotoEmotionTests.swift */,
+				E42F214F284CA97D0029970D /* MainViewModelTest.swift */,
+				E42F2153284CB0560029970D /* MockPhotoFirebaseRepository.swift */,
+				E42F2155284CB3570029970D /* TestResultType.swift */,
 			);
 			path = PhotoEmotionTests;
 			sourceTree = "<group>";
@@ -337,6 +348,7 @@
 		E4F9D3CB283CD3C800759465 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				E42F2151284CAF280029970D /* PhotoFirebaseRepositoryable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -682,6 +694,7 @@
 				E4F9D3E2283E89BE00759465 /* EmotionType.swift in Sources */,
 				E4F9D3DE283E7FE900759465 /* ListViewController.swift in Sources */,
 				E4F9D3FA2840992200759465 /* UploadViewModel.swift in Sources */,
+				E42F2152284CAF280029970D /* PhotoFirebaseRepositoryable.swift in Sources */,
 				E4F9D3D3283DB41600759465 /* EmotionContentTableViewCell.swift in Sources */,
 				E4F9D3D7283E6E2D00759465 /* PhotoCollectionViewCell.swift in Sources */,
 				E4F9D3F4283F41CB00759465 /* ListViewModel.swift in Sources */,
@@ -695,7 +708,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42F2156284CB3570029970D /* TestResultType.swift in Sources */,
 				E4F9D3A6283CC66F00759465 /* PhotoEmotionTests.swift in Sources */,
+				E42F2150284CA97D0029970D /* MainViewModelTest.swift in Sources */,
+				E42F2154284CB0560029970D /* MockPhotoFirebaseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,8 +32,14 @@ final class ListViewModel {
 
     private let disposeBag = DisposeBag()
     private let listType: EmotionType
+    private let photoFirebaseRepository: PhotoFirebaseRepositoryable
 
-    init(listType: EmotionType) {
+    convenience init(listType: EmotionType) {
+        self.init(listType: listType, photoFirebaseRepository: PhotoFirebaseRepository.shared)
+    }
+
+    init(listType: EmotionType, photoFirebaseRepository: PhotoFirebaseRepositoryable) {
+        self.photoFirebaseRepository = photoFirebaseRepository
         self.listType = listType
         subscribe()
     }
@@ -48,7 +54,7 @@ final class ListViewModel {
     }
 
     private func fetchData() -> Completable {
-        return PhotoFirebaseRepository.fetch(emotionType: listType)
+        return photoFirebaseRepository.fetch(emotionType: listType)
             .do(
                 onSuccess: { [weak self] photoItems in
                     guard let self = self else { return }

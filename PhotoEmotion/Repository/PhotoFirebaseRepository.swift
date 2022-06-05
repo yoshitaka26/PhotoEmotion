@@ -17,8 +17,8 @@ final class PhotoFirebaseRepository {
     private init() { }
 }
 
-extension PhotoFirebaseRepository {
-    static func fetch(emotionType: EmotionType) -> Single<[PhotoItem]> {
+extension PhotoFirebaseRepository: PhotoFirebaseRepositoryable {
+    func fetch(emotionType: EmotionType) -> Single<[PhotoItem]> {
         return Single<[PhotoItem]>.create(subscribe: { single in
             let db = Firestore.firestore()
             db.collection("photoEmotion").whereField("tag", isEqualTo: emotionType.rawValue)
@@ -39,7 +39,7 @@ extension PhotoFirebaseRepository {
         })
     }
 
-    static func upload(image: UIImage, emotionType: EmotionType, imageId: UUID) -> Completable {
+    func upload(image: UIImage, emotionType: EmotionType, imageId: UUID) -> Completable {
         return Completable.create { completable in
             let uploadImageData = image.jpegData(compressionQuality: 0.3)!
             // Get a reference to the storage service using the default Firebase App
