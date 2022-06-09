@@ -17,7 +17,7 @@ target 'PhotoEmotion' do
   pod 'R.swift', '~> 6.1.0'
   pod 'SwiftLint', '~> 0.41.0'
 
-  pod 'ImageViewer', '~> 6.0.0'
+  pod 'ImageViewer', :git => 'https://github.com/Krisiacik/ImageViewer', :branch => 'master'
   pod 'PINRemoteImage', '3.0.3'
   pod 'JVFloatLabeledTextField', '~> 1.2.2'
   pod 'PKHUD', '~> 5.0'

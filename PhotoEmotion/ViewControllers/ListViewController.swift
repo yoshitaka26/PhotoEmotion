@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import ImageViewer
+import PINRemoteImage
 
 class ListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -94,18 +95,16 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 
 extension ListViewController: GalleryItemsDataSource {
     func itemCount() -> Int {
-        return self.viewModel.galleryImages.value.count
+        return self.viewModel.photoListSubject.value.count
     }
 
     func provideGalleryItem(_ index: Int) -> GalleryItem {
-        return GalleryItem.image { $0(self.viewModel.galleryImages.value[index]) }
+        return GalleryItem.image { [weak self] imageCompletion in
+            guard let self = self else { return }
+            _ = PINRemoteImageManager.shared().downloadImage(with: URL(string: self.viewModel.photoListSubject.value[index].photoURL)!) { result in
+                guard let image = result.image else { return }
+                imageCompletion(image)
+            }
+        }
     }
 }
-
-extension ListViewController: GalleryDisplacedViewsDataSource {
-    func provideDisplacementItem(atIndex index: Int) -> DisplaceableView? {
-        return UIImageView(image: viewModel.galleryImages.value[index])
-    }
-}
-
-extension UIImageView: DisplaceableView {}

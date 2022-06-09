@@ -7,18 +7,16 @@
 
 import RxSwift
 import RxCocoa
-import PINRemoteImage
 
 final class ListViewModel {
 
     private(set) var isLoading = BehaviorRelay<Bool>(value: false)
     private(set) var viewWillAppear = PublishRelay<Void>()
 
-    private var photoListSubject = BehaviorRelay<[PhotoItem]>(value: [])
+    var photoListSubject = BehaviorRelay<[PhotoItem]>(value: [])
     var photoList: Driver<[PhotoItem]> {
         return photoListSubject.asDriver(onErrorJustReturn: [])
     }
-    private(set) var galleryImages = BehaviorRelay<[UIImage]>(value: [])
 
     private var pushScreenSubject = PublishRelay<Screen>()
     var pushScreen: Driver<Screen> {
@@ -59,9 +57,6 @@ final class ListViewModel {
                 onSuccess: { [weak self] photoItems in
                     guard let self = self else { return }
                     self.photoListSubject.accept(photoItems)
-                    photoItems.forEach {
-                        self.prefetchImages(url: URL(string: $0.photoURL)!)
-                    }
                 },
                 onError: { [weak self] error in
                     guard let self = self else { return }
@@ -72,15 +67,6 @@ final class ListViewModel {
             )
             .map { _ in }
             .asCompletable()
-    }
-
-    private func prefetchImages(url: URL) {
-        _ = PINRemoteImageManager.shared().downloadImage(with: url) { [weak self] result in
-            guard let self = self, let image = result.image else { return }
-            var photoList = self.galleryImages.value
-            photoList.append(image)
-            self.galleryImages.accept(photoList)
-        }
     }
 }
 
