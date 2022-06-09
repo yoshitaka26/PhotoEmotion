@@ -12,7 +12,7 @@ import RxCocoa
 
 class MockPhotoFirebaseRepository: PhotoFirebaseRepositoryable {
     var resultType: TestResultType
-    var emotionType: EmotionType = .happy
+    var emotionType: EmotionType
     var photoItems: [PhotoItem] {
         [
             PhotoItem(id: "001", photoURL: "", tag: emotionType.rawValue),
@@ -21,8 +21,9 @@ class MockPhotoFirebaseRepository: PhotoFirebaseRepositoryable {
         ]
     }
 
-    required init(result: TestResultType) {
+    required init(result: TestResultType, emotionType: EmotionType = .happy) {
         self.resultType = result
+        self.emotionType = emotionType
     }
 
     func fetch(emotionType: EmotionType) -> Single<[PhotoItem]> {
