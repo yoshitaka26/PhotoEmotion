@@ -106,6 +106,7 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
+// swiftlint:disable:next force_unwrapping
 extension MainViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.emotionListSubject.value.count
@@ -115,7 +116,7 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: R.reuseIdentifier.emotionTitleHeaderTableViewCell) as! EmotionTitleHeaderTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: R.reuseIdentifier.emotionTitleHeaderTableViewCell)!
         let emotionListContents = viewModel.emotionListSubject.value[section]
         header.render(emotionListContents: emotionListContents)
         header.delegate = self
@@ -123,13 +124,14 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.emotionContentTableViewCell, for: indexPath) as! EmotionContentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.emotionContentTableViewCell, for: indexPath)!
         let emotionListContents = viewModel.emotionListSubject.value[indexPath.section]
         cell.render(emotionListContents: emotionListContents)
         cell.delegate = self
         return cell
     }
 }
+// swiftlint:disable:previous force_unwrapping
 
 extension MainViewController: ListTableDelegate {
     func headerButtonPressed(_ emotionType: EmotionType) {

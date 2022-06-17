@@ -28,7 +28,7 @@ class ListViewController: UIViewController {
 
             viewModel.photoList
                 .drive(collectionView.rx.items) { collectionView, row, element in
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.photoCollectionViewCell, for: IndexPath(row: row, section: 0)) as! PhotoCollectionViewCell
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.nib.photoCollectionViewCell, for: IndexPath(row: row, section: 0))! // swiftlint:disable:this force_unwrapping
                     cell.render(photoItem: element)
                     return cell
                 }

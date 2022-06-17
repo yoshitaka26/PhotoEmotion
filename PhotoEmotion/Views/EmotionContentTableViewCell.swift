@@ -21,7 +21,7 @@ class EmotionContentTableViewCell: UITableViewCell {
 
             photoItems
                 .drive(collectionView.rx.items) { collectionView, index, photoItem in
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.photoCollectionViewCell, for: IndexPath(row: index, section: 0)) as! PhotoCollectionViewCell
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.photoCollectionViewCell, for: IndexPath(row: index, section: 0))! // swiftlint:disable:this force_unwrapping
                     cell.render(photoItem: photoItem)
                     return cell
                 }

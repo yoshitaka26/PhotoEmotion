@@ -19,6 +19,7 @@ enum Screen {
     case other
 }
 
+// swiftlint:disable operator_whitespace
 func ==(a: Screen, b: Screen) -> Bool {
     switch (a, b) {
     case (.main, .main),

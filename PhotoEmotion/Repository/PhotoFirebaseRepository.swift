@@ -50,13 +50,13 @@ extension PhotoFirebaseRepository: PhotoFirebaseRepositoryable {
             let uploadImageRef = storageRef.child("images/\(imageId).jpg")
 
             // Upload the file to the path "images/___.jpg"
-            let uploadTask = uploadImageRef.putData(uploadImageData, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
+            _ = uploadImageRef.putData(uploadImageData, metadata: nil) { (metadata, error) in
+                guard metadata != nil else {
                     completable(.error(error!))
                     return
                 }
                 // Metadata contains file metadata such as size, content-type.
-                let size = metadata.size
+                // let size = metadata.size
                 // You can also access to download URL after upload.
                 uploadImageRef.downloadURL { (url, error) in
                     guard let downloadURL = url else {
@@ -65,7 +65,7 @@ extension PhotoFirebaseRepository: PhotoFirebaseRepositoryable {
                     }
                     let photoItem = PhotoItem(id: imageId.uuidString, photoURL: downloadURL.absoluteString, tag: emotionType.rawValue)
                     let db = Firestore.firestore()
-                    var ref: DocumentReference? = nil
+                    var ref: DocumentReference?
                     ref = db.collection("photoEmotion").addDocument(data: [
                         "id": photoItem.id,
                         "photoURL": photoItem.photoURL,
