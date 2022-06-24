@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03954BEF57FE556CC701853A /* Pods_PhotoEmotion_PhotoEmotionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E3B06369AB449236F0D65 /* Pods_PhotoEmotion_PhotoEmotionUITests.framework */; };
 		24A60924D70245CF61E424DF /* Pods_PhotoEmotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0558188B69C1DCE6BB358670 /* Pods_PhotoEmotion.framework */; };
 		25CE5195AC52A82258F6974F /* Pods_PhotoEmotionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D7844D7C43790C2780BA69 /* Pods_PhotoEmotionTests.framework */; };
 		E42F2150284CA97D0029970D /* MainViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F214F284CA97D0029970D /* MainViewModelTest.swift */; };
 		E42F2152284CAF280029970D /* PhotoFirebaseRepositoryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F2151284CAF280029970D /* PhotoFirebaseRepositoryable.swift */; };
 		E42F2154284CB0560029970D /* MockPhotoFirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F2153284CB0560029970D /* MockPhotoFirebaseRepository.swift */; };
 		E42F2156284CB3570029970D /* TestResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F2155284CB3570029970D /* TestResultType.swift */; };
+		E42F2195285C0BED0029970D /* ListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42F2194285C0BED0029970D /* ListViewModelTest.swift */; };
 		E4B38DC528427363002F8E6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B38DC428427363002F8E6A /* GoogleService-Info.plist */; };
 		E4B38DC828447ECC002F8E6A /* PhotoFirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B38DC728447ECC002F8E6A /* PhotoFirebaseRepository.swift */; };
 		E4B38DCA28480F56002F8E6A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B38DC928480F56002F8E6A /* APIError.swift */; };
@@ -24,9 +24,6 @@
 		E4F9D396283CC66E00759465 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D394283CC66E00759465 /* MainViewController.storyboard */; };
 		E4F9D398283CC66F00759465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D397283CC66F00759465 /* Assets.xcassets */; };
 		E4F9D39B283CC66F00759465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D399283CC66F00759465 /* LaunchScreen.storyboard */; };
-		E4F9D3A6283CC66F00759465 /* PhotoEmotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3A5283CC66F00759465 /* PhotoEmotionTests.swift */; };
-		E4F9D3B0283CC66F00759465 /* PhotoEmotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3AF283CC66F00759465 /* PhotoEmotionUITests.swift */; };
-		E4F9D3B2283CC66F00759465 /* PhotoEmotionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3B1283CC66F00759465 /* PhotoEmotionUITestsLaunchTests.swift */; };
 		E4F9D3CF283DB3D600759465 /* EmotionTitleHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3CD283DB3D600759465 /* EmotionTitleHeaderTableViewCell.swift */; };
 		E4F9D3D0283DB3D600759465 /* EmotionTitleHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F9D3CE283DB3D600759465 /* EmotionTitleHeaderTableViewCell.xib */; };
 		E4F9D3D3283DB41600759465 /* EmotionContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9D3D1283DB41600759465 /* EmotionContentTableViewCell.swift */; };
@@ -60,13 +57,6 @@
 			remoteGlobalIDString = E4F9D38A283CC66E00759465;
 			remoteInfo = PhotoEmotion;
 		};
-		E4F9D3AC283CC66F00759465 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4F9D383283CC66E00759465 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4F9D38A283CC66E00759465;
-			remoteInfo = PhotoEmotion;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +73,7 @@
 		E42F2151284CAF280029970D /* PhotoFirebaseRepositoryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFirebaseRepositoryable.swift; sourceTree = "<group>"; };
 		E42F2153284CB0560029970D /* MockPhotoFirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoFirebaseRepository.swift; sourceTree = "<group>"; };
 		E42F2155284CB3570029970D /* TestResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultType.swift; sourceTree = "<group>"; };
+		E42F2194285C0BED0029970D /* ListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTest.swift; sourceTree = "<group>"; };
 		E4B38DC428427363002F8E6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4B38DC728447ECC002F8E6A /* PhotoFirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFirebaseRepository.swift; sourceTree = "<group>"; };
 		E4B38DC928480F56002F8E6A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -97,10 +88,6 @@
 		E4F9D39A283CC66F00759465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4F9D39C283CC66F00759465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4F9D3A1283CC66F00759465 /* PhotoEmotionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEmotionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4F9D3A5283CC66F00759465 /* PhotoEmotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEmotionTests.swift; sourceTree = "<group>"; };
-		E4F9D3AB283CC66F00759465 /* PhotoEmotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoEmotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4F9D3AF283CC66F00759465 /* PhotoEmotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEmotionUITests.swift; sourceTree = "<group>"; };
-		E4F9D3B1283CC66F00759465 /* PhotoEmotionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEmotionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E4F9D3CD283DB3D600759465 /* EmotionTitleHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionTitleHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		E4F9D3CE283DB3D600759465 /* EmotionTitleHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmotionTitleHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		E4F9D3D1283DB41600759465 /* EmotionContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionContentTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,14 +130,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4F9D3A8283CC66F00759465 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				03954BEF57FE556CC701853A /* Pods_PhotoEmotion_PhotoEmotionUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -177,7 +156,6 @@
 			children = (
 				E4F9D38D283CC66E00759465 /* PhotoEmotion */,
 				E4F9D3A4283CC66F00759465 /* PhotoEmotionTests */,
-				E4F9D3AE283CC66F00759465 /* PhotoEmotionUITests */,
 				E4F9D38C283CC66E00759465 /* Products */,
 				E9A55BB777128E72C6596567 /* Pods */,
 				E3F7389F487CBF64D5CF66DF /* Frameworks */,
@@ -189,7 +167,6 @@
 			children = (
 				E4F9D38B283CC66E00759465 /* PhotoEmotion.app */,
 				E4F9D3A1283CC66F00759465 /* PhotoEmotionTests.xctest */,
-				E4F9D3AB283CC66F00759465 /* PhotoEmotionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,21 +195,12 @@
 		E4F9D3A4283CC66F00759465 /* PhotoEmotionTests */ = {
 			isa = PBXGroup;
 			children = (
-				E4F9D3A5283CC66F00759465 /* PhotoEmotionTests.swift */,
 				E42F214F284CA97D0029970D /* MainViewModelTest.swift */,
+				E42F2194285C0BED0029970D /* ListViewModelTest.swift */,
 				E42F2153284CB0560029970D /* MockPhotoFirebaseRepository.swift */,
 				E42F2155284CB3570029970D /* TestResultType.swift */,
 			);
 			path = PhotoEmotionTests;
-			sourceTree = "<group>";
-		};
-		E4F9D3AE283CC66F00759465 /* PhotoEmotionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E4F9D3AF283CC66F00759465 /* PhotoEmotionUITests.swift */,
-				E4F9D3B1283CC66F00759465 /* PhotoEmotionUITestsLaunchTests.swift */,
-			);
-			path = PhotoEmotionUITests;
 			sourceTree = "<group>";
 		};
 		E4F9D3C0283CD28000759465 /* ViewControllers */ = {
@@ -417,26 +385,6 @@
 			productReference = E4F9D3A1283CC66F00759465 /* PhotoEmotionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E4F9D3AA283CC66F00759465 /* PhotoEmotionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4F9D3BB283CC66F00759465 /* Build configuration list for PBXNativeTarget "PhotoEmotionUITests" */;
-			buildPhases = (
-				2D9791428E444A11954F08A3 /* [CP] Check Pods Manifest.lock */,
-				E4F9D3A7283CC66F00759465 /* Sources */,
-				E4F9D3A8283CC66F00759465 /* Frameworks */,
-				E4F9D3A9283CC66F00759465 /* Resources */,
-				AE84581099F8ABDD9BAC7F3E /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E4F9D3AD283CC66F00759465 /* PBXTargetDependency */,
-			);
-			name = PhotoEmotionUITests;
-			productName = PhotoEmotionUITests;
-			productReference = E4F9D3AB283CC66F00759465 /* PhotoEmotionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -451,10 +399,6 @@
 						CreatedOnToolsVersion = 13.3;
 					};
 					E4F9D3A0283CC66F00759465 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = E4F9D38A283CC66E00759465;
-					};
-					E4F9D3AA283CC66F00759465 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = E4F9D38A283CC66E00759465;
 					};
@@ -476,7 +420,6 @@
 			targets = (
 				E4F9D38A283CC66E00759465 /* PhotoEmotion */,
 				E4F9D3A0283CC66F00759465 /* PhotoEmotionTests */,
-				E4F9D3AA283CC66F00759465 /* PhotoEmotionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -506,38 +449,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4F9D3A9283CC66F00759465 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D9791428E444A11954F08A3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PhotoEmotion-PhotoEmotionUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		74699F928026F91ECAC6135E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -597,23 +511,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE84581099F8ABDD9BAC7F3E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoEmotion-PhotoEmotionUITests/Pods-PhotoEmotion-PhotoEmotionUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD6E719B3913A859C6CD1257 /* [CP] Embed Pods Frameworks */ = {
@@ -709,18 +606,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E42F2156284CB3570029970D /* TestResultType.swift in Sources */,
-				E4F9D3A6283CC66F00759465 /* PhotoEmotionTests.swift in Sources */,
+				E42F2195285C0BED0029970D /* ListViewModelTest.swift in Sources */,
 				E42F2150284CA97D0029970D /* MainViewModelTest.swift in Sources */,
 				E42F2154284CB0560029970D /* MockPhotoFirebaseRepository.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4F9D3A7283CC66F00759465 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4F9D3B0283CC66F00759465 /* PhotoEmotionUITests.swift in Sources */,
-				E4F9D3B2283CC66F00759465 /* PhotoEmotionUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,11 +619,6 @@
 			isa = PBXTargetDependency;
 			target = E4F9D38A283CC66E00759465 /* PhotoEmotion */;
 			targetProxy = E4F9D3A2283CC66F00759465 /* PBXContainerItemProxy */;
-		};
-		E4F9D3AD283CC66F00759465 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4F9D38A283CC66E00759465 /* PhotoEmotion */;
-			targetProxy = E4F9D3AC283CC66F00759465 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -898,6 +781,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -927,6 +811,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -984,44 +869,6 @@
 			};
 			name = Release;
 		};
-		E4F9D3BC283CC66F00759465 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C5E05517C3ED4B43A9D1B68 /* Pods-PhotoEmotion-PhotoEmotionUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.PhotoEmotionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PhotoEmotion;
-			};
-			name = Debug;
-		};
-		E4F9D3BD283CC66F00759465 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B3EA45D7CD8C075291BF9BA /* Pods-PhotoEmotion-PhotoEmotionUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VKV3Y2GW5Q;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoshitaka.PhotoEmotionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PhotoEmotion;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1048,15 +895,6 @@
 			buildConfigurations = (
 				E4F9D3B9283CC66F00759465 /* Debug */,
 				E4F9D3BA283CC66F00759465 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4F9D3BB283CC66F00759465 /* Build configuration list for PBXNativeTarget "PhotoEmotionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4F9D3BC283CC66F00759465 /* Debug */,
-				E4F9D3BD283CC66F00759465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
